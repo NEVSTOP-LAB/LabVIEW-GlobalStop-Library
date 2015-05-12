@@ -20,6 +20,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="GlobalStop(dev).lvlib" Type="Library" URL="../src/GlobalStop(dev).lvlib"/>
+		<Item Name="main(with error).vi" Type="VI" URL="../main(with error).vi"/>
 		<Item Name="main.vi" Type="VI" URL="../main.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build">
@@ -49,7 +50,7 @@
 				<Property Name="Destination[1].path" Type="Path">../llb/NI_AB_PROJECTNAME.llb</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{218FF59C-EB30-4E63-8FE5-B373C7C0A4AB}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7E241E1B-6012-4EFE-B976-EF1BE2D5AD8A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib</Property>
@@ -62,7 +63,7 @@
 				<Property Name="Source[2].sourceInclusion" Type="Str">Exclude</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/GET STOP.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/Normal/GET STOP.vi</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[3].VI.LLBtopLevel" Type="Bool">true</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
@@ -73,11 +74,21 @@
 				<Property Name="Source[5].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/SET STOP.vi</Property>
 				<Property Name="Source[5].type" Type="Str">VI</Property>
 				<Property Name="Source[5].VI.LLBtopLevel" Type="Bool">true</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/Normal/CheckSet STOP.vi</Property>
+				<Property Name="Source[6].type" Type="Str">VI</Property>
+				<Property Name="Source[6].VI.LLBtopLevel" Type="Bool">true</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/WithError/GET STOP(WithError).vi</Property>
+				<Property Name="Source[7].type" Type="Str">VI</Property>
+				<Property Name="Source[7].VI.LLBtopLevel" Type="Bool">true</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/WithError/CheckSet STOP(WithError).vi</Property>
+				<Property Name="Source[8].type" Type="Str">VI</Property>
+				<Property Name="Source[8].VI.LLBtopLevel" Type="Bool">true</Property>
+				<Property Name="SourceCount" Type="Int">9</Property>
 			</Item>
 			<Item Name="ComponentStopllb" Type="Source Distribution">
-				<Property Name="AB_Class_Path" Type="Path">/C/Program Files (x86)/National Instruments/LabVIEW 2012/vi.lib/AppBuilder/AB_Classes/SourceDistribution/AB_SourceDistribution.lvclass</Property>
-				<Property Name="AB_UIClass_Path" Type="Path">/C/Program Files (x86)/National Instruments/LabVIEW 2012/vi.lib/AppBuilder/AB_Classes/Build/UI/AB_UI_Frmwk_Build.lvclass</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{8D91B78A-C878-49EF-B8C9-7C9FC146ED36}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">ComponentStopllb</Property>
 				<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
@@ -102,7 +113,7 @@
 				<Property Name="Destination[1].path" Type="Path">../llb/ComponentStop.llb</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{218FF59C-EB30-4E63-8FE5-B373C7C0A4AB}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{7E241E1B-6012-4EFE-B976-EF1BE2D5AD8A}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib</Property>
@@ -115,7 +126,7 @@
 				<Property Name="Source[2].sourceInclusion" Type="Str">Exclude</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/GET STOP.vi</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/Normal/GET STOP.vi</Property>
 				<Property Name="Source[3].type" Type="Str">VI</Property>
 				<Property Name="Source[3].VI.LLBtopLevel" Type="Bool">true</Property>
 				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
@@ -126,7 +137,19 @@
 				<Property Name="Source[5].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/SET STOP.vi</Property>
 				<Property Name="Source[5].type" Type="Str">VI</Property>
 				<Property Name="Source[5].VI.LLBtopLevel" Type="Bool">true</Property>
-				<Property Name="SourceCount" Type="Int">6</Property>
+				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/Normal/CheckSet STOP.vi</Property>
+				<Property Name="Source[6].type" Type="Str">VI</Property>
+				<Property Name="Source[6].VI.LLBtopLevel" Type="Bool">true</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/WithError/GET STOP(WithError).vi</Property>
+				<Property Name="Source[7].type" Type="Str">VI</Property>
+				<Property Name="Source[7].VI.LLBtopLevel" Type="Bool">true</Property>
+				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/GlobalStop(dev).lvlib/WithError/CheckSet STOP(WithError).vi</Property>
+				<Property Name="Source[8].type" Type="Str">VI</Property>
+				<Property Name="Source[8].VI.LLBtopLevel" Type="Bool">true</Property>
+				<Property Name="SourceCount" Type="Int">9</Property>
 			</Item>
 		</Item>
 	</Item>
