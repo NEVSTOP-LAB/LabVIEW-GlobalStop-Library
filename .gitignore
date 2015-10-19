@@ -45,3 +45,4 @@ ipch/
 build/
 installer/
 ignore/
+storage/
