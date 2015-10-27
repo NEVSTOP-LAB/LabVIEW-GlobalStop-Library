@@ -4,6 +4,8 @@
 
 使用Function Global Variable （FGV）的方式，存储一个Boolean 类型的标志数据，不同线程通过读取该FGV判断是否需要停止。
 
+![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
+
 - `Init.vi` : 初始化FGV，设置为False
 - `Set.vi` : 设置FGV为True
 - `Reset.vi` :设置FGV为False
