@@ -16,6 +16,22 @@
 	<Property Name="EndevoGOOP_ColorTextBody" Type="UInt">1</Property>
 	<Property Name="EndevoGOOP_ColorTextHeader" Type="UInt">0</Property>
 	<Property Name="EndevoGOOP_FrameThickness" Type="UInt">1</Property>
+	<Property Name="NI.Lib.Description" Type="Str"># LabVIEW GlobalStop Library
+
+提供给系统使用的全局停止方案。
+
+使用Function Global Variable （FGV）的方式，存储一个Boolean 类型的标志数据，不同线程通过读取该FGV判断是否需要停止。
+
+![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
+
+- `Init.vi` : 初始化STOP FGV，如果ERROR 发生，则全局停止位初始化为 TRUE
+- `Reset.vi` :设置STOP FGV为 False，Index 标识模块编号，-1 标识全局停止位
+- `Set.vi` : 设置STOP FGV为 True，Index 标识模块编号，-1 标识全局停止位
+- `Get.vi` :检查STOP FGV值，如果输入的错误簇为False，会自动调用Set.vi 方法，Index 标识模块编号，-1 标识全局停止位
+- `CheckSet.vi` :检查输入的Boolean值，（通常连接到Stop Button上）判断是否需要退出。如果输入的错误簇为False，会自动调用Set.vi 方法，Index 标识模块编号，-1 标识全局停止位
+
+优点：简单、高效、易用，STOP FGV的方案也保证了多线程安全。
+</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">&amp;!#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!(A!!!*Q(C=\&gt;4.D2J"%!&lt;1MO7$LW2AE5+F1!KE5#FQ^:%5+A63))6+A22)9@VIN4=#3VZJNXO,B9`_?@3-*G+VHR%`YKN^N;`WK&gt;PP`QW)_"&lt;R^P;G2L5KF5I_]J'0@/1D(XH,7^\SFL?]Z35P?=F,8P+3JTTF+5^ZSF/_ODTE)1]ZUNB]&lt;$17(1O-Q3AR8I:H?):H?(S-Y2G?Y2G?Y4%EBG&gt;YBG&gt;YBM?U'*\B':\B'2Z,,=GM,O=:(MN(]T20]T20]^ASGK="WG:NY&lt;9)2L1PWZPG;:\G]4;;JXG;JXG;R^@20-X40-X40+;M5_GF?85ZDW7C?)KH?)KH?#Q&gt;R6-]R6-]R7/\+*\C+9CS96E=)=KE-K"]+*\C]3_+JXC+JXC+RV@L#N5[G:@GV?5]S:-]S:-]S7/*3*\E3:\E32\,2P)E4`)E4`,9+J)H?:)H1&gt;+GNI_U7*K9"K5A?@SNOS886?IFS&gt;5D^MU&lt;_[;-@&lt;0&amp;PIFCXRSR,XLMCRH\)M5_`.C('POQ9B^#\"]8'RU&lt;%XO4W*.@!_0J^;(O[K;O[K,/[K3/[P#;_I](0J`0?$Q?=&lt;`@YX;\R@6[D=PF%O@T/5[H5RS0RTA=$O_0A6`[_Q0B)TS80I4B_XIW`GX/[!]-RG7\!!!!!!</Property>
 	<Property Name="NI.Lib.SourceVersion" Type="Int">335577088</Property>
@@ -44,9 +60,9 @@
 	<Property Name="Use Data Logging Database" Type="Bool">true</Property>
 	<Item Name="private" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
+		<Item Name="_replace stopArr element.vi" Type="VI" URL="../_replace stopArr element.vi"/>
 		<Item Name="_def_oper.ctl" Type="VI" URL="../_def_oper.ctl"/>
 		<Item Name="_gStop.vi" Type="VI" URL="../_gStop.vi"/>
-		<Item Name="_replace stopArr element.vi" Type="VI" URL="../_replace stopArr element.vi"/>
 	</Item>
 	<Item Name="GSTOP INIT.vi" Type="VI" URL="../GSTOP INIT.vi"/>
 	<Item Name="GSTOP RESET.vi" Type="VI" URL="../GSTOP RESET.vi"/>

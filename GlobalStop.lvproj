@@ -23,6 +23,7 @@
 		<Item Name="GSTOP.lvlib" Type="Library" URL="../src/user.lib/_NEVSTOP/GlobalStop/GSTOP.lvlib"/>
 		<Item Name="main1.vi" Type="VI" URL="../main1.vi"/>
 		<Item Name="main2.vi" Type="VI" URL="../main2.vi"/>
+		<Item Name="main3.vi" Type="VI" URL="../main3.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build">
 			<Property Name="NI.SortType" Type="Int">3</Property>
@@ -81,11 +82,7 @@
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="main2.vi" Type="VI" URL="../main2.vi"/>
 		<Item Name="依赖关系" Type="Dependencies">
-			<Item Name="_gStop.vi" Type="VI" URL="../src/_gStop.vi"/>
-			<Item Name="GSTOP CheckSet.vi" Type="VI" URL="../src/GSTOP CheckSet.vi"/>
-			<Item Name="GSTOP GET.vi" Type="VI" URL="../src/GSTOP GET.vi"/>
-			<Item Name="GSTOP INIT.vi" Type="VI" URL="../src/GSTOP INIT.vi"/>
-			<Item Name="GSTOP SET.vi" Type="VI" URL="../src/GSTOP SET.vi"/>
+			<Item Name="GSTOP.lvlib" Type="Library" URL="../src/user.lib/_NEVSTOP/GlobalStop/GSTOP.lvlib"/>
 		</Item>
 		<Item Name="程序生成规范" Type="Build"/>
 	</Item>
