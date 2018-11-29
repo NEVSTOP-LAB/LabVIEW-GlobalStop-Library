@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="0.6" Created_Date="2015-10-15 14:38:17" Modified_Date="2018-03-10 12:33:20" Creator="Administrator" Comments="" ID="d22d35b6261f99f2ec7731013a1f8b2f">
+<VI_Package_Builder_Settings Version="2017" Created_Date="2015-10-15 14:38:17" Modified_Date="2018-11-29 13:47:36" Creator="Administrator" Comments="" ID="de5c334caabaf15c480b688e28eaee9f">
   <Library_General_Settings>
     <Package_File_Name>nevstop_lib_globalstop</Package_File_Name>
-    <Library_Version>2.0.0.3</Library_Version>
+    <Library_Version>2.0.1.4</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>..\storage</Library_Output_Folder>
@@ -46,7 +46,8 @@
       <Copyright/>
       <Packager>yaoli</Packager>
       <URL>https://github.com/nevstop/LabVIEW-GlobalStop-Library</URL>
-      <Release_Notes>Add Component Stop.</Release_Notes>
+      <Release_Notes>Add Component Stop.
+Update v1.x VI Icons and add v1.x pallette.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -102,6 +103,11 @@
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
         <Path/>
       </Project_Provider>
+      <QuickDrop_Plugins>
+        <LLB>false</LLB>
+        <Preserve_Hierarchy>true</Preserve_Hierarchy>
+        <Path/>
+      </QuickDrop_Plugins>
     </Destinations>
     <Source_Files>
       <Destination_Overrides>
