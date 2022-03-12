@@ -1,0 +1,8 @@
+title: Labview-globalstop-library
+description: LabVIEW-GlobalStop-Library
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
