@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build_VIPM_Library
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  Build_VIPM_Library:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, lv2014]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # - name: vipm_InstallPackagesByName
+      #   uses: LV-APT/lvCICD@main
+      #   with:
+      #     Operation: vipm_InstallPackagesByName
+      #     Parameter1: 'Git API'
+
+      # Runs a set of commands using the runners shell
+      - name: BuildDailyVIP
+        id: build-vip
+        uses: LV-APT/lvCICD@main
+        with:
+          LabVIEW_Version: 2014
+          Operation: vipm_BuildDailyVIP
+          Parameter1: ${{ github.workspace }}\src\LabVIEW-GlobalStop-Library.vipb
+          Parameter2: NO
+
+      - id: vip-name
+        run:
+          $vipName=Split-Path -Path ${{ steps.build-vip.outputs.Result }} -Leaf;
+          Write-Host "::set-output name=vipName::"$vipName""
+        shell: powershell
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          # Artifact name
+          name: ${{ steps.vip-name.outputs.vipName }}
+          path: ${{ steps.build-vip.outputs.Result }}
+          # The desired behavior if no files are found using the provided path.
+          if-no-files-found: warn
+          retention-days: 90
