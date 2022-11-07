@@ -29,7 +29,7 @@ jobs:
       #     Parameter1: 'Git API'
 
       - id: previoustag
-        uses: uses: WyriHaximus/github-action-get-previous-tag@v1
+        uses: WyriHaximus/github-action-get-previous-tag@v1
         with:
           # Fallback tag to use when no previous tag can be found
           fallback: 
