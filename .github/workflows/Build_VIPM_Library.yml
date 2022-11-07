@@ -43,7 +43,7 @@ jobs:
         uses: LV-APT/lvCICD@lv2014_support
         with:
           LabVIEW_Version: 2014
-          Operation: vipm_BuildDailyVIP
+          Operation: vipm_BuildVIPackage
           Parameter1: ${{ github.workspace }}\src\LabVIEW-GlobalStop-Library.vipb
           Parameter2: ${{ steps.previoustag.outputs.tag }}
           Parameter3: NO
