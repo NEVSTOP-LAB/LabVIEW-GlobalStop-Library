@@ -28,15 +28,6 @@ jobs:
       #     Operation: vipm_InstallPackagesByName
       #     Parameter1: 'Git API'
 
-      - id: previoustag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        with:
-          # Fallback tag to use when no previous tag can be found
-          fallback: NOTFOUND
-
-      - name: PrintTag
-        run: ${{ steps.previoustag.outputs.tag }}        
-
       # Runs a set of commands using the runners shell
       - name: Build VI Package
         id: build-vip
@@ -45,7 +36,7 @@ jobs:
           LabVIEW_Version: 2014
           Operation: vipm_BuildVIPackage
           Parameter1: ${{ github.workspace }}\src\LabVIEW-GlobalStop-Library.vipb
-          Parameter2: ${{ steps.previoustag.outputs.tag }}
+          Parameter2: DAILYBUILD
           Parameter3: NO
 
       - id: vip-name
