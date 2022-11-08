@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2015-10-15 14:38:17" Modified_Date="2022-11-08 16:23:09" Creator="Administrator" Comments="" ID="c494d747c29702c60349bfdd34f55c35">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2015-10-15 14:38:17" Modified_Date="2022-11-08 17:01:34" Creator="Administrator" Comments="" ID="0504dae0df650ed079e9c34bdcca05d2">
   <Library_General_Settings>
     <Package_File_Name>nevstop_lib_globalstop</Package_File_Name>
     <Library_Version>2022.11.8.4</Library_Version>
@@ -30,7 +30,29 @@
       <One_Line_Description_Summary>Global Stop library for labview</One_Line_Description_Summary>
       <Description># LabVIEW GlobalStop Library
 
-https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library</Description>
+[![Check_Broken_VIs](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml)
+[![Build_VIPM_Library](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Build_VIPM_Library.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Build_VIPM_Library.yml)
+
+Simple stop mechanism for parallel loops in LabVIEW. 
+
+## ¹¦ÄÜ
+
+![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
+
+- `Init.vi` : Initialzie Globalstop, if error occurs, GlobalStop will be set to TRUE
+- `Reset.vi` : Reset GlobalStop to FALSE. Index=-1 stands for reset all.
+- `Set.vi` : Set GlobalStop to TRUE. Index=-1 stands for set all to TRUE.
+- `Get.vi` : Get GlobalStop value of index. Set Index=-1 to get the global value of GlobalStop.
+- `CheckSet.vi` : Check the boolean input(usually a stop button).
+
+# Example 
+
+![image](https://user-images.githubusercontent.com/8196752/200517986-eb2f3ed4-0931-443e-9bb2-d45b227550c0.png)
+
+## Development Environment
+
+- LabVEW 2014
+- VIPM 2020.3</Description>
       <Copyright/>
       <Packager>NEVSTOP</Packager>
       <URL>https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library</URL>
