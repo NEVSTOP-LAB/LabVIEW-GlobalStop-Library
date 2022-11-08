@@ -11,7 +11,7 @@ Simple stop mechanism for parallel loops in LabVIEW.
 
 - `Init.vi` : Initialzie Globalstop, if error occurs, GlobalStop will be set to TRUE
 - `Reset.vi` : Reset GlobalStop to FALSE. Index=-1 stands for reset all.
-- `Set.vi` : Reset GlobalStop to TRUE. Index=-1 stands for set all to TRUE.
+- `Set.vi` : Set GlobalStop to TRUE. Index=-1 stands for set all to TRUE.
 - `Get.vi` : Get GlobalStop value of index. Set Index=-1 to get the global value of GlobalStop.
 - `CheckSet.vi` : Check the boolean input(usually a stop button).
 
