@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="0.6" Created_Date="2015-10-15 14:38:17" Modified_Date="2018-12-10 13:59:54" Creator="Administrator" Comments="" ID="e006e8c88349ab1ec6aa4cc3737ecd79">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2015-10-15 14:38:17" Modified_Date="2022-11-08 16:23:09" Creator="Administrator" Comments="" ID="c494d747c29702c60349bfdd34f55c35">
   <Library_General_Settings>
     <Package_File_Name>nevstop_lib_globalstop</Package_File_Name>
-    <Library_Version>2.0.2.4</Library_Version>
+    <Library_Version>2022.11.8.4</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>..\storage</Library_Output_Folder>
@@ -27,14 +27,14 @@
     </Custom_Action_VIs>
     <VI_Package_Configuration_File>LabVIEW-GlobalStop-Library.vipc</VI_Package_Configuration_File>
     <Description>
-      <One_Line_Description_Summary>Global Stop library</One_Line_Description_Summary>
+      <One_Line_Description_Summary>Global Stop library for labview</One_Line_Description_Summary>
       <Description># LabVIEW GlobalStop Library
 
-https://raw.githubusercontent.com/nevstop/LabVIEW-GlobalStop-Library/master/README.mds</Description>
+https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library</Description>
       <Copyright/>
-      <Packager>yaoli</Packager>
-      <URL>https://github.com/nevstop/LabVIEW-GlobalStop-Library</URL>
-      <Release_Notes>Fix issue, update Front panel pallette.</Release_Notes>
+      <Packager>NEVSTOP</Packager>
+      <URL>https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library</URL>
+      <Release_Notes>add cicd check</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -90,6 +90,11 @@ https://raw.githubusercontent.com/nevstop/LabVIEW-GlobalStop-Library/master/READ
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
         <Path/>
       </Project_Provider>
+      <QuickDrop_Plugins>
+        <LLB>false</LLB>
+        <Preserve_Hierarchy>true</Preserve_Hierarchy>
+        <Path/>
+      </QuickDrop_Plugins>
     </Destinations>
     <Source_Files>
       <Destination_Overrides>
@@ -106,6 +111,12 @@ https://raw.githubusercontent.com/nevstop/LabVIEW-GlobalStop-Library/master/READ
       </Destination_Overrides>
       <Destination_Overrides>
         <Path>vi.lib</Path>
+        <Destination>0</Destination>
+        <Additional_Destination>false</Additional_Destination>
+        <Additional_Destination_Index>0</Additional_Destination_Index>
+      </Destination_Overrides>
+      <Destination_Overrides>
+        <Path>examples</Path>
         <Destination>0</Destination>
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>

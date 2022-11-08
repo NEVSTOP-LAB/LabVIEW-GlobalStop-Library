@@ -37,10 +37,9 @@ jobs:
         uses: LV-APT/lvCICD@main
         with:
           LabVIEW_Version: 2014
-          Operation: vipm_BuildVIPackage
+          Operation: vipm_BuildDailyVIP
           Parameter1: ${{ github.workspace }}\src\LabVIEW-GlobalStop-Library.vipb
-          Parameter2: DAILYBUILD
-          Parameter3: NO
+          Parameter2: NO
 
       - id: vip-name
         run:
