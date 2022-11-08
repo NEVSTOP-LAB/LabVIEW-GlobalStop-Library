@@ -27,3 +27,4 @@ jobs:
 
       - name: Print tag
         run: echo ${{steps.get-tag.outputs.latestTag}}
+        shell: powershell
