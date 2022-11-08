@@ -20,7 +20,7 @@ jobs:
 
       - id: get-tag
         run:
-          $Tag=$(git tag --list | sort -V | tail -n1);
+          $Tag=$(git tag --list | sort -V | Select -Last 1);
           Write-Host "::set-output name=latestTag::"$Tag""
         shell: powershell
 
