@@ -1,5 +1,7 @@
 # LabVIEW GlobalStop Library
 
+[![Check_Broken_VIs](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml)
+
 提供给LabVIEW 程序使用的全局停止方案。
 
 **优点：简单、高效、易用，STOP FGV的方案也保证了多线程安全。**
