@@ -18,12 +18,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - id: get-tag
+      - id: gettag
+        shell: powershell
         run: |
           $Tag=$(git tag --list | sort -V | Select -Last 1)
           echo "latestTag=$Tag" >> $GITHUB_OUTPUT
-        shell: powershell
 
       - name: Print tag
-        run: echo ${{steps.get-tag.outputs.latestTag}}
         shell: powershell
+        run: echo ${{ steps.gettag.outputs.latestTag }}
