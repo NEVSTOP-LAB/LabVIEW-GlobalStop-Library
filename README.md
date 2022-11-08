@@ -22,5 +22,5 @@
 
 ## Development Environment
 
-- LabVEW 2017
+- LabVEW 2014
 - VIPM 2020.3
