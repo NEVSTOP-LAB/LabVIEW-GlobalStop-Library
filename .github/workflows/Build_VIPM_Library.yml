@@ -34,7 +34,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build VI Package
         id: build-vip
-        uses: LV-APT/lvCICD@lv2014_support
+        uses: LV-APT/lvCICD@main
         with:
           LabVIEW_Version: 2014
           Operation: vipm_BuildVIPackage

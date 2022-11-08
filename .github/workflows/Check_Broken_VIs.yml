@@ -27,7 +27,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - id: Check_Broken_VIs
-        uses: LV-APT/lvCICD@lv2014_support
+        uses: LV-APT/lvCICD@main
         with:
           LabVIEW_Version: 2014
           Operation: VIAn_CheckBrokenVIs
