@@ -20,10 +20,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="GSTOP.lvlib" Type="Library" URL="../src/user.lib/_NEVSTOP/GlobalStop/GSTOP.lvlib"/>
-		<Item Name="main1.vi" Type="VI" URL="../main1.vi"/>
-		<Item Name="main2.vi" Type="VI" URL="../main2.vi"/>
-		<Item Name="main3.vi" Type="VI" URL="../main3.vi"/>
+		<Item Name="src" Type="Folder" URL="../src">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build">
 			<Property Name="NI.SortType" Type="Int">3</Property>

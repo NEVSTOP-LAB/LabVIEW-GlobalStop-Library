@@ -1,29 +1,25 @@
 # LabVIEW GlobalStop Library
 
-提供给LabVIEW 程序使用的全局停止方案。    
+[![Check_Broken_VIs](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml)
+[![Build_VIPM_Library](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Build_VIPM_Library.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Build_VIPM_Library.yml)
 
-**优点：简单、高效、易用，STOP FGV的方案也保证了多线程安全。**
-
+Simple stop mechanism for parallel loops in LabVIEW. 
 
 ## 功能
 
 ![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
 
-- `Init.vi` : 初始化STOP FGV，如果ERROR 发生，则全局停止位初始化为 TRUE
-- `Reset.vi` :设置STOP FGV为 False，Index 标识模块编号，-1 标识全局停止位
-- `Set.vi` : 设置STOP FGV为 True，Index 标识模块编号，-1 标识全局停止位
-- `Get.vi` :检查STOP FGV值，如果输入的错误簇为False，会自动调用 `Set.vi` 方法，Index 标识模块编号，-1 标识全局停止位
-- `CheckSet.vi` :检查输入的Boolean值，(通常连接到Stop Button上)判断是否需要退出。如果输入的错误簇为False，会自动调用 `Set.vi` 方法，Index 标识模块编号，-1 标识全局停止位
+- `Init.vi` : Initialzie Globalstop, if error occurs, GlobalStop will be set to TRUE
+- `Reset.vi` : Reset GlobalStop to FALSE. Index=-1 stands for reset all.
+- `Set.vi` : Set GlobalStop to TRUE. Index=-1 stands for set all to TRUE.
+- `Get.vi` : Get GlobalStop value of index. Set Index=-1 to get the global value of GlobalStop.
+- `CheckSet.vi` : Check the boolean input(usually a stop button).
 
+# Example 
 
-## 实现
+![image](https://user-images.githubusercontent.com/8196752/200517986-eb2f3ed4-0931-443e-9bb2-d45b227550c0.png)
 
-  - 使用Function Global Variable (FGV)的方式，存储一组(初始默认32个) Boolean 类型的标志数据，不同线程通过读取该FGV判断是否需要停止。
-  - Index 标识模块编号，-1 标识全局停止位。建议创建将模块列表创建为Enum/Combo Typedef，连接到 Index 输入端。
-  - 当超出当前定义的标志个数时，会自动扩展 FGV 中的标志Flag 数组长度。
+## Development Environment
 
-
-## 使用环境
-
-    LabVIEW 2014 +
-
+- LabVEW 2014
+- VIPM 2020.3
