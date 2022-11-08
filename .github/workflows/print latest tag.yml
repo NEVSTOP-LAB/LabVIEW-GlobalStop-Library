@@ -21,8 +21,7 @@ jobs:
       - id: get-tag
         run: |
           $Tag=$(git tag --list | sort -V | Select -Last 1)
-          echo $Tag
-          Write-Host "::set-output name=latestTag::"$Tag""
+          echo "latestTag=$Tag" >> $GITHUB_OUTPUT
         shell: powershell
 
       - name: Print tag
