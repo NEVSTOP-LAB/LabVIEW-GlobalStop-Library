@@ -6,12 +6,11 @@ name: Check_Broken_VIs
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    paths:
-      - '!**.md'
-      - '!**.yml'
-      - '!**.txt'
-      - '!**.drawio'
-      - '!**.vipb'
+    paths-ignore:
+      - '**.md'
+      - '**.txt'
+      - '**.drawio'
+      - '**.vipb'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
