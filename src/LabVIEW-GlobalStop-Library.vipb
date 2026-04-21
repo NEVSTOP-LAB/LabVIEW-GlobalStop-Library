@@ -27,26 +27,24 @@
     </Custom_Action_VIs>
     <VI_Package_Configuration_File>LabVIEW-GlobalStop-Library.vipc</VI_Package_Configuration_File>
     <Description>
-      <One_Line_Description_Summary>Global Stop library for labview</One_Line_Description_Summary>
-      <Description>Simple stop mechanism for parallel loops in LabVIEW. 
+      <One_Line_Description_Summary>Global stop library for LabVIEW parallel loops and multi-module applications</One_Line_Description_Summary>
+      <Description><b>Overview</b>
+LabVIEW GlobalStop Library provides a lightweight and thread-safe global stop mechanism for parallel loops and multi-module applications.
 
-## ¹¦ÄÜ
+<b>Key VIs</b>
+- GSTOP INIT.vi: Initialize STOP FGV. If an incoming error is detected, set global stop to TRUE.
+- GSTOP RESET.vi: Reset stop flag to FALSE. Index = -1 resets the global stop flag.
+- GSTOP SET.vi: Set stop flag to TRUE. Index = -1 sets the global stop flag.
+- GSTOP GET.vi: Read stop flag by index. Index = -1 reads the global stop flag.
+- GSTOP CheckSet.vi: Check a Boolean input (usually a Stop button) and trigger stop when needed.
 
-![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
+<b>Implementation</b>
+- Uses an FGV to store stop flags (32 Boolean flags by default).
+- Index identifies module-level stop flags, while -1 identifies the global stop flag.
+- The internal stop flag array auto-expands when index exceeds current size.
 
-- `Init.vi` : Initialzie Globalstop, if error occurs, GlobalStop will be set to TRUE
-- `Reset.vi` : Reset GlobalStop to FALSE. Index=-1 stands for reset all.
-- `Set.vi` : Set GlobalStop to TRUE. Index=-1 stands for set all to TRUE.
-- `Get.vi` : Get GlobalStop value of index. Set Index=-1 to get the global value of GlobalStop.
-- `CheckSet.vi` : Check the boolean input(usually a stop button).
-
-# Example 
-
-![image](https://user-images.githubusercontent.com/8196752/200517986-eb2f3ed4-0931-443e-9bb2-d45b227550c0.png)
-
-## Development Environment
-
-- LabVEW 2014
+<b>Development Environment</b>
+- LabVIEW 2014
 - VIPM 2020.3</Description>
       <Copyright/>
       <Packager>NEVSTOP</Packager>

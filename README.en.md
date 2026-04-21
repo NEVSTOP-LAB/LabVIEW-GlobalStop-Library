@@ -7,30 +7,30 @@
 [![GitHub all releases](https://img.shields.io/github/downloads/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/total)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/releases)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/NEVSTOP-LAB/LabVIEW-GlobalStop-Library)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/releases)
 
-A simple, efficient, and thread-safe Global Stop solution for LabVIEW parallel loops and multi-module applications.
+A global stop library for LabVIEW parallel loops and multi-module applications, providing a unified, lightweight, and thread-safe stop mechanism.
 
-## Features
+## Key Features
 
 ![Library Palette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
 
-- `GSTOP INIT.vi`: Initializes the STOP FGV; if an incoming error is detected, the global stop flag is set to `TRUE`.
-- `GSTOP RESET.vi`: Resets stop flag to `FALSE`. `Index=-1` means reset the global stop flag.
-- `GSTOP SET.vi`: Sets stop flag to `TRUE`. `Index=-1` means set the global stop flag.
-- `GSTOP GET.vi`: Gets stop flag by index. `Index=-1` means get the global stop flag.
-- `GSTOP CheckSet.vi`: Checks a Boolean input (usually wired to a Stop button) and triggers stop when needed.
+- `GSTOP INIT.vi`: Initializes the STOP FGV. If an incoming error cluster is in error state, the global stop flag is immediately set to `TRUE`.
+- `GSTOP RESET.vi`: Resets a stop flag to `FALSE`; `Index=-1` means reset the global stop flag.
+- `GSTOP SET.vi`: Sets a stop flag to `TRUE`; `Index=-1` means set the global stop flag.
+- `GSTOP GET.vi`: Reads a stop flag by index; `Index=-1` means read the global stop flag.
+- `GSTOP CheckSet.vi`: Checks a Boolean input (typically wired to a Stop button) and triggers stop when the condition is met.
 
 ## Implementation
 
 - Uses a Functional Global Variable (FGV) to store stop flags (32 Boolean flags by default).
-- `Index` identifies module-level stop flags; `-1` identifies the global stop flag.
-- The internal flag array is automatically extended when index exceeds current size.
+- `Index` identifies module-level stop flags, while `-1` identifies the global stop flag.
+- The internal flag array is automatically extended when the input index exceeds current size.
 
-## Recommended Usage
+## Recommended Workflow
 
-- Call `GSTOP INIT.vi` once during startup.
-- In each loop/module, periodically call `GSTOP GET.vi` or `GSTOP CheckSet.vi` to decide when to exit.
-- Call `GSTOP SET.vi` when a fatal error occurs in any module to stop all loops consistently.
-- Use a Typedef Enum/Combo for module index management to avoid hard-coded numbers.
+1. Call `GSTOP INIT.vi` once during startup.
+2. In each parallel loop, periodically call `GSTOP GET.vi` or `GSTOP CheckSet.vi` to decide whether to exit.
+3. Call `GSTOP SET.vi` when any module encounters a fatal error to trigger coordinated global stop.
+4. Use a Typedef Enum/Combo to manage `Index` values for better maintainability and to avoid hard-coded numbers.
 
 ## Examples
 
