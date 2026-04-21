@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="14008000">
+<Project Type="Project" LVVersion="17008000">
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="SMProvider.SMVersion" Type="Int">201310</Property>
 	<Item Name="My Computer" Type="My Computer">
@@ -80,9 +80,7 @@
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="main2.vi" Type="VI" URL="../main2.vi"/>
-		<Item Name="依赖关系" Type="Dependencies">
-			<Item Name="GSTOP.lvlib" Type="Library" URL="../src/user.lib/_NEVSTOP/GlobalStop/GSTOP.lvlib"/>
-		</Item>
+		<Item Name="依赖关系" Type="Dependencies"/>
 		<Item Name="程序生成规范" Type="Build"/>
 	</Item>
 </Project>
