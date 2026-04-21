@@ -11,7 +11,7 @@ A simple, efficient, and thread-safe Global Stop solution for LabVIEW parallel l
 
 ## Features
 
-![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
+![Library Palette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
 
 - `GSTOP INIT.vi`: Initializes the STOP FGV; if an incoming error is detected, the global stop flag is set to `TRUE`.
 - `GSTOP RESET.vi`: Resets stop flag to `FALSE`. `Index=-1` means reset the global stop flag.

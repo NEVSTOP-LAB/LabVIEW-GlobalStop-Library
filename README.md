@@ -13,7 +13,7 @@
 
 ## 功能
 
-![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
+![Library Palette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
 
 - `GSTOP INIT.vi`：初始化 STOP FGV；若输入错误簇为错误状态，会将全局停止位置为 `TRUE`。
 - `GSTOP RESET.vi`：将停止位复位为 `FALSE`。`Index=-1` 表示复位全局停止位。
