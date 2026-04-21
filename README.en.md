@@ -7,36 +7,34 @@
 [![GitHub all releases](https://img.shields.io/github/downloads/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/total)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/releases)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/NEVSTOP-LAB/LabVIEW-GlobalStop-Library)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/releases)
 
-用于 LabVIEW 并行循环/多模块场景的全局停止（Global Stop）库。
+A simple, efficient, and thread-safe Global Stop solution for LabVIEW parallel loops and multi-module applications.
 
-**特点：简单、高效、线程安全。**
-
-## 功能
+## Features
 
 ![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
 
-- `GSTOP INIT.vi`：初始化 STOP FGV；若输入错误簇为错误状态，会将全局停止位置为 `TRUE`。
-- `GSTOP RESET.vi`：将停止位复位为 `FALSE`。`Index=-1` 表示复位全局停止位。
-- `GSTOP SET.vi`：将停止位置为 `TRUE`。`Index=-1` 表示设置全局停止位。
-- `GSTOP GET.vi`：读取指定索引的停止位。`Index=-1` 表示读取全局停止位。
-- `GSTOP CheckSet.vi`：检查布尔输入（通常连接 Stop 按钮），并在需要时触发停止。
+- `GSTOP INIT.vi`: Initializes the STOP FGV; if an incoming error is detected, the global stop flag is set to `TRUE`.
+- `GSTOP RESET.vi`: Resets stop flag to `FALSE`. `Index=-1` means reset the global stop flag.
+- `GSTOP SET.vi`: Sets stop flag to `TRUE`. `Index=-1` means set the global stop flag.
+- `GSTOP GET.vi`: Gets stop flag by index. `Index=-1` means get the global stop flag.
+- `GSTOP CheckSet.vi`: Checks a Boolean input (usually wired to a Stop button) and triggers stop when needed.
 
-## 实现说明
+## Implementation
 
-- 通过 Functional Global Variable (FGV) 保存一组停止标志位（默认 32 个布尔值）。
-- `Index` 用于区分模块停止位，`-1` 表示全局停止位。
-- 当索引超出当前长度时，内部数组会自动扩展。
+- Uses a Functional Global Variable (FGV) to store stop flags (32 Boolean flags by default).
+- `Index` identifies module-level stop flags; `-1` identifies the global stop flag.
+- The internal flag array is automatically extended when index exceeds current size.
 
-## 使用建议
+## Recommended Usage
 
-- 在程序启动阶段调用一次 `GSTOP INIT.vi`。
-- 各并行循环周期性调用 `GSTOP GET.vi` 或 `GSTOP CheckSet.vi` 判断是否退出。
-- 任意模块出现致命错误时调用 `GSTOP SET.vi`，实现全局联动停止。
-- 使用 Typedef Enum/Combo 管理模块索引，避免硬编码。
+- Call `GSTOP INIT.vi` once during startup.
+- In each loop/module, periodically call `GSTOP GET.vi` or `GSTOP CheckSet.vi` to decide when to exit.
+- Call `GSTOP SET.vi` when a fatal error occurs in any module to stop all loops consistently.
+- Use a Typedef Enum/Combo for module index management to avoid hard-coded numbers.
 
-## 示例
+## Examples
 
-仓库提供以下示例：
+The repository includes the following examples:
 
 - `src/examples/NEVSTOP/GlobalStop/globalstop-example1.vi`
 - `src/examples/NEVSTOP/GlobalStop/globalstop-example2.vi`
@@ -44,7 +42,7 @@
 
 ![Example](https://user-images.githubusercontent.com/8196752/200517986-eb2f3ed4-0931-443e-9bb2-d45b227550c0.png)
 
-## 开发环境
+## Development Environment
 
 - LabVIEW 2014
 - VIPM 2020.3
