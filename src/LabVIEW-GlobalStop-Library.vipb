@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2015-10-15 14:38:17" Modified_Date="2026-04-21 20:06:37" Creator="Administrator" Comments="" ID="f6e7bf6b157944f0d9ef5a36c528f70a">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2015-10-15 14:38:17" Modified_Date="2026-04-23 19:47:41" Creator="Administrator" Comments="" ID="988781f17254da8c4db63888819ec587">
   <Library_General_Settings>
     <Package_File_Name>nevstop_lib_globalstop</Package_File_Name>
-    <Library_Version>2026.4.21.4</Library_Version>
+    <Library_Version>2026.4.21.5</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>.</Library_Source_Folder>
     <Library_Output_Folder>..\vip</Library_Output_Folder>
@@ -27,7 +27,7 @@
       <Pre-Uninstall_VI/>
       <Post-Uninstall_VI/>
     </Custom_Action_VIs>
-    <VI_Package_Configuration_File/>
+    <VI_Package_Configuration_File>LabVIEW-GlobalStop-Library.vipc</VI_Package_Configuration_File>
     <Description>
       <One_Line_Description_Summary>Global stop library for LabVIEW parallel loops and multi-module applications</One_Line_Description_Summary>
       <Description>&lt;b&gt;Overview&lt;/b&gt;
@@ -119,12 +119,6 @@ LabVIEW GlobalStop Library provides a lightweight and thread-safe global stop me
       </Destination_Overrides>
       <Destination_Overrides>
         <Path>user.lib</Path>
-        <Destination>0</Destination>
-        <Additional_Destination>false</Additional_Destination>
-        <Additional_Destination_Index>0</Additional_Destination_Index>
-      </Destination_Overrides>
-      <Destination_Overrides>
-        <Path>vi.lib</Path>
         <Destination>0</Destination>
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
