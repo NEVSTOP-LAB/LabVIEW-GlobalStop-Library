@@ -27,7 +27,7 @@
       <Pre-Uninstall_VI/>
       <Post-Uninstall_VI/>
     </Custom_Action_VIs>
-    <VI_Package_Configuration_File>LabVIEW-GlobalStop-Library.vipc</VI_Package_Configuration_File>
+    <VI_Package_Configuration_File/>
     <Description>
       <One_Line_Description_Summary>Global stop library for LabVIEW parallel loops and multi-module applications</One_Line_Description_Summary>
       <Description>&lt;b&gt;Overview&lt;/b&gt;
