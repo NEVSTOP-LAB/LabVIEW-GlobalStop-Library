@@ -46,3 +46,4 @@ build/
 installer/
 ignore/
 storage/
+/vip/*.vip
