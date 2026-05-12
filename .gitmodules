@@ -1,0 +1,4 @@
+[submodule ".github/skills/labview-vi-props-skill"]
+	path = .github/skills/labview-vi-props-skill
+	url = https://github.com/NEVSTOP-LAB/labview-vi-props-skill.git
+	branch = main

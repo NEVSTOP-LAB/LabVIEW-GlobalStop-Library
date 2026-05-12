@@ -34,15 +34,8 @@
 
 ## 示例
 
-仓库包含以下示例：
-
-- `src/examples/NEVSTOP/GlobalStop/globalstop-example1.vi`
-- `src/examples/NEVSTOP/GlobalStop/globalstop-example2.vi`
-- `src/examples/NEVSTOP/GlobalStop/globalstop-example3.vi`
-
 ![Example](https://user-images.githubusercontent.com/8196752/200517986-eb2f3ed4-0931-443e-9bb2-d45b227550c0.png)
 
 ## 开发环境
 
-- LabVIEW 2014
-- VIPM 2020.3
+- LabVIEW 2017

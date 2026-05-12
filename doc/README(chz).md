@@ -3,27 +3,31 @@
 [![Check_Broken_VIs](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Check_Broken_VIs.yml)
 [![Build_VIPM_Library](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Build_VIPM_Library.yml/badge.svg)](https://github.com/NEVSTOP-LAB/LabVIEW-GlobalStop-Library/actions/workflows/Build_VIPM_Library.yml)
 
-提供给LabVIEW 程序使用的全局停止方案。
-
-**优点：简单、高效、易用，STOP FGV的方案也保证了多线程安全。**
+面向 LabVIEW 并行循环与多模块程序的全局停止（Global Stop）库，提供统一、轻量且线程安全的停止机制。
 
 ## 功能
 
 ![Library Pallette](https://cloud.githubusercontent.com/assets/8196752/10752145/8288f624-7cc1-11e5-9700-e3740e08f571.png)
 
-- `Init.vi` : 初始化STOP FGV，如果ERROR 发生，则全局停止位初始化为 TRUE
-- `Reset.vi` :设置STOP FGV为 False，Index 标识模块编号，-1 标识全局停止位
-- `Set.vi` : 设置STOP FGV为 True，Index 标识模块编号，-1 标识全局停止位
-- `Get.vi` :检查STOP FGV值，如果输入的错误簇为False，会自动调用 `Set.vi` 方法，Index 标识模块编号，-1 标识全局停止位
-- `CheckSet.vi` :检查输入的Boolean值，(通常连接到Stop Button上)判断是否需要退出。如果输入的错误簇为False，会自动调用 `Set.vi` 方法，Index 标识模块编号，-1 标识全局停止位
+- `GSTOP INIT.vi`：初始化 STOP FGV；若输入错误簇为错误状态，则立即将全局停止位置为 `TRUE`。
+- `GSTOP RESET.vi`：将停止位复位为 `FALSE`；`Index=-1` 表示复位全局停止位。
+- `GSTOP SET.vi`：将停止位置为 `TRUE`；`Index=-1` 表示设置全局停止位。
+- `GSTOP GET.vi`：读取指定索引的停止位；`Index=-1` 表示读取全局停止位。
+- `GSTOP CheckSet.vi`：检查布尔输入（通常连接 Stop 按钮），并在满足条件时触发停止。
 
 ## 实现
 
-- 使用Function Global Variable (FGV)的方式，存储一组(初始默认32个) Boolean 类型的标志数据，不同线程通过读取该FGV判断是否需要停止。
-- Index 标识模块编号，-1 标识全局停止位。建议创建将模块列表创建为Enum/Combo Typedef，连接到 Index 输入端。
-- 当超出当前定义的标志个数时，会自动扩展 FGV 中的标志Flag 数组长度。
+- 使用 Functional Global Variable（FGV）保存停止标志数组，默认包含 32 个布尔位。
+- `Index` 用于区分模块停止位，`-1` 代表全局停止位。
+- 当输入索引超出当前长度时，内部标志数组会自动扩展。
+
+## 推荐使用流程
+
+1. 程序启动时调用一次 `GSTOP INIT.vi` 完成初始化。
+2. 各并行循环中周期性调用 `GSTOP GET.vi` 或 `GSTOP CheckSet.vi` 判断是否退出。
+3. 任一模块发生致命错误时调用 `GSTOP SET.vi`，触发全局联动停止。
+4. 建议使用 Typedef Enum/Combo 管理 `Index`，避免硬编码并提升可维护性。
 
 ## Development Environment
 
-- LabVEW 2014
-- VIPM 2020.3
+- LabVIEW 2017
