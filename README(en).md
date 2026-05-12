@@ -44,5 +44,4 @@ The repository includes the following examples:
 
 ## Development Environment
 
-- LabVIEW 2014
-- VIPM 2020.3
+- LabVIEW 2017
