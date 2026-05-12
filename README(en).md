@@ -34,12 +34,6 @@ A global stop library for LabVIEW parallel loops and multi-module applications, 
 
 ## Examples
 
-The repository includes the following examples:
-
-- `src/examples/NEVSTOP/GlobalStop/globalstop-example1.vi`
-- `src/examples/NEVSTOP/GlobalStop/globalstop-example2.vi`
-- `src/examples/NEVSTOP/GlobalStop/globalstop-example3.vi`
-
 ![Example](https://user-images.githubusercontent.com/8196752/200517986-eb2f3ed4-0931-443e-9bb2-d45b227550c0.png)
 
 ## Development Environment
